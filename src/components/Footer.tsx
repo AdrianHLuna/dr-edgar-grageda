@@ -10,11 +10,11 @@ export default function Footer() {
   const whatsappUrl = `https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`;
 
   return (
-    <footer className="bg-[#081412] text-slate-300 pt-16 pb-12 border-t border-[#1F3D36]">
+    <footer className="bg-[#0F172A] text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* PROMINENT CENTERED WHITE LOGO ON DARK BACKGROUND (RULE 5) */}
-        <div className="flex flex-col items-center justify-center mb-12 border-b border-[#1F3D36]/60 pb-10">
+        {/* PROMINENT CENTERED WHITE LOGO ON DARK NAVY BACKGROUND (RULE 5) */}
+        <div className="flex flex-col items-center justify-center mb-12 border-b border-slate-800 pb-10">
           <div className="w-full max-w-[550px] h-32 sm:h-40 relative flex items-center justify-center mb-4">
             <Image
               src="/images/logo/LOGO-02.png"
@@ -38,7 +38,7 @@ export default function Footer() {
           
           {/* Col 1: Contacto y Pagos */}
           <div className="space-y-4">
-            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-[#1F3D36] pb-2">
+            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-2">
               Atención & Citas
             </h3>
             <div className="space-y-3 font-semibold text-slate-300">
@@ -61,7 +61,7 @@ export default function Footer() {
               <span className="text-[11px] font-bold text-slate-400 block mb-2">Formas de Pago:</span>
               <div className="flex flex-wrap gap-1.5">
                 {doctor.paymentMethods.map(method => (
-                  <span key={method} className="bg-[#112420] border border-[#1F3D36] text-[10px] px-2.5 py-1 rounded-md text-emerald-300 font-bold">
+                  <span key={method} className="bg-slate-800/80 border border-slate-700 text-[10px] px-2.5 py-1 rounded-md text-emerald-300 font-bold">
                     {method}
                   </span>
                 ))}
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Col 2: Padecimientos */}
           <div className="space-y-4">
-            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-[#1F3D36] pb-2">
+            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-2">
               Padecimientos
             </h3>
             <ul className="space-y-2 font-medium">
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Col 3: Servicios */}
           <div className="space-y-4">
-            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-[#1F3D36] pb-2">
+            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-2">
               Cirugías & Servicios
             </h3>
             <ul className="space-y-2 font-medium">
@@ -113,7 +113,7 @@ export default function Footer() {
 
           {/* Col 4: Síntomas y Legal */}
           <div className="space-y-4">
-            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-[#1F3D36] pb-2">
+            <h3 className="text-white text-sm font-black uppercase tracking-wider text-emerald-400 border-b border-slate-800 pb-2">
               Orientación & Legal
             </h3>
             <ul className="space-y-2 font-medium">
@@ -125,7 +125,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="pt-2 border-t border-[#1F3D36]/60">
+            <div className="pt-2 border-t border-slate-800">
               <Link href="/aviso-de-privacidad" className="text-slate-400 hover:text-white transition font-bold block mb-1">
                 Aviso de Privacidad
               </Link>
@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM CREDENTIALS BAR */}
-        <div className="border-t border-[#1F3D36] pt-6 text-center text-[11px] text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-slate-800 pt-6 text-center text-[11px] text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>
             {doctor.title} {doctor.name} — Cédula Profesional: <strong>{doctor.cedula}</strong> (BUAP) | Cédula Especialidad: <strong>{doctor.cedulaEspecialidad}</strong> (BUAP) | CMCG: <strong>C17004017</strong>
           </p>

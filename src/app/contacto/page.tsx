@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { doctor } from "@/data/doctor";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StructuredData from "@/components/StructuredData";
@@ -11,7 +12,8 @@ import {
   FaShieldAlt, 
   FaHospital,
   FaDirections,
-  FaCalendarAlt
+  FaCheckCircle,
+  FaMoneyBillWave
 } from "react-icons/fa";
 
 export const metadata = {
@@ -38,172 +40,145 @@ export default function ContactPage() {
     priceRange: `$${doctor.consultationPrice} MXN`,
   };
 
-  // Google Maps Embed URL pointing to exact consultorio pin at Privada de las Ramblas 4, Puebla
   const exactPlaceMapEmbedUrl = "https://maps.google.com/maps?q=Privada+de+las+Ramblas+4,+Desarrollo+Atlixcayotl,+72197+Puebla,+Pue.&t=&z=16&ie=UTF8&iwloc=B&output=embed";
 
   return (
-    <div className="min-h-screen bg-[#0B1B17] text-slate-100 py-10 px-6 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 py-10 px-6 relative overflow-hidden">
       <StructuredData data={schema} />
 
-      {/* Glowing Emerald Highlights */}
-      <div className="absolute top-10 left-1/3 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[160px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-10 space-y-8">
+      <div className="max-w-7xl mx-auto relative z-10 space-y-10">
         
         {/* BREADCRUMBS WITH HIGH CONTRAST */}
-        <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Ubicación & Citas" }]} isDark={true} />
+        <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Ubicación & Citas" }]} isDark={false} />
 
-        {/* ─── 1. TOP DISPATCH & EMERGENCY BANNER ─────────────────────────── */}
-        <div className="bg-gradient-to-r from-[#112420] via-[#0E1F1B] to-[#0B1B17] border-2 border-emerald-500/40 rounded-[2.5rem] p-6 lg:p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-black text-2xl flex-shrink-0">
-              <FaPhoneAlt />
-            </div>
-            <div>
-              <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800/60 inline-block mb-1">
-                Atención Médica & Urgencias Quirúrgicas
-              </span>
-              <h2 className="text-xl sm:text-2xl font-black text-white">
-                Valoración Quirúrgica en Torres Médicas Ramblas, Puebla
-              </h2>
-              <p className="text-xs text-slate-300 mt-1 font-medium">
-                Atención directa para dolores agudos de vesícula, apendicitis y hernias de pared abdominal.
-              </p>
-            </div>
+        {/* ─── 1. TOP HEADER TITLE (MINIMALIST & CLEAN, NO HORIZONTAL BANNER!) ─── */}
+        <div className="space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs uppercase tracking-widest border border-emerald-300">
+            <FaHospital className="text-emerald-700" /> Torres Médicas Ramblas • Puebla
           </div>
-          <a
-            href={`tel:${doctor.phone}`}
-            className="px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-black text-xs uppercase tracking-wider hover:brightness-110 transition shadow-xl flex items-center gap-2 flex-shrink-0"
-          >
-            <FaPhoneAlt size={16} /> Llamar Directo: {doctor.phone}
-          </a>
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight">
+            Ubicación del Consultorio y Agendamiento
+          </h1>
+          <p className="text-slate-600 text-base max-w-3xl font-medium">
+            Atención especializada en cirugía general, laparoscopía y urgencias por el {doctor.title} {doctor.name}.
+          </p>
         </div>
 
-        {/* ─── 2. ASYMMETRIC COMMAND CENTER GRID (5 / 7 SPLIT) ───────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* LEFT PANEL: CONSULTATION DOCK & PRICING (5 cols) */}
-          <div className="lg:col-span-5 bg-[#112420] rounded-[2.5rem] p-8 border border-[#1F3D36] shadow-2xl space-y-6 flex flex-col justify-between">
-            
-            <div className="space-y-6">
-              
-              <div className="flex items-center justify-between border-b border-[#1F3D36] pb-4">
-                <div>
-                  <span className="text-xs font-black uppercase tracking-widest text-emerald-400">
-                    Consultorio Puebla (Zona Atlixcáyotl)
-                  </span>
-                  <h3 className="text-2xl font-black text-white mt-1">
-                    {doctor.title} {doctor.name}
-                  </h3>
-                </div>
-                <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black text-xl">
-                  <FaHospital />
-                </div>
+        {/* ─── 2. FULL-WIDTH INTERACTIVE MAP CANVAS WITH FLOATING GLASS DOCK OVERLAY ─── */}
+        <div className="w-full h-[520px] rounded-[3rem] overflow-hidden border-2 border-slate-300 shadow-2xl relative bg-slate-900">
+          {/* Live Embedded Google Maps Canvas */}
+          <iframe
+            title="Mapa Interactivo Consultorio Dr. Edgar Grageda Flores"
+            src={exactPlaceMapEmbedUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          {/* FLOATING GLASS DOCK OVERLAY ON TOP OF MAP (TOP-LEFT CORNER ON DESKTOP) */}
+          <div className="absolute top-6 left-6 right-6 sm:right-auto sm:max-w-md bg-[#0F172A]/90 backdrop-blur-xl p-6 sm:p-8 rounded-[2rem] border-2 border-emerald-500/40 shadow-2xl text-white space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">
+                  Consultorio 631
+                </span>
+                <h2 className="text-xl font-black text-white">
+                  {doctor.title} {doctor.name}
+                </h2>
               </div>
-
-              {/* Fee & Payment Card */}
-              <div className="bg-[#0B1B17] p-6 rounded-2xl border border-emerald-500/30 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-300">Costo de Consulta:</span>
-                  <span className="text-2xl font-black text-emerald-400">${doctor.consultationPrice} MXN</span>
-                </div>
-                <div className="pt-2 border-t border-[#1F3D36] space-y-2 text-xs font-semibold text-slate-300">
-                  <p className="text-emerald-300 font-bold">✓ Hasta 12 Meses Sin Intereses con Tarjetas</p>
-                  <p className="text-sky-300 font-bold">✓ Cobertura con Seguros de Gastos Médicos Mayores</p>
-                </div>
-              </div>
-
-              {/* Direct Info List */}
-              <div className="space-y-3 text-xs text-slate-300">
-                <div className="p-4 rounded-xl bg-[#0B1B17] border border-[#1F3D36] flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-emerald-400 text-base mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-extrabold text-white">Dirección Exacta del Consultorio:</p>
-                    <p className="text-emerald-400 font-black mt-0.5 leading-relaxed">{doctor.address}</p>
-                    <p className="text-slate-400 text-[11px] mt-1">Entre Vía Atlixcáyotl y Calle María Morelos y Pavón</p>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#0B1B17] border border-[#1F3D36] flex items-center gap-3">
-                  <FaClock className="text-emerald-400 text-base flex-shrink-0" />
-                  <div>
-                    <p className="font-extrabold text-white">Horario de Atención:</p>
-                    <p className="text-slate-300 mt-0.5">{doctor.schedule}</p>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-[#0B1B17] border border-[#1F3D36] flex items-center gap-3">
-                  <FaCreditCard className="text-emerald-400 text-base flex-shrink-0" />
-                  <div>
-                    <p className="font-extrabold text-white">Formas de Pago Aceptadas:</p>
-                    <p className="text-slate-300 mt-0.5">{doctor.paymentMethods.join(" • ")}</p>
-                  </div>
-                </div>
-              </div>
-
+              <span className="text-xl font-black text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-xl">
+                ${doctor.consultationPrice} MXN
+              </span>
             </div>
 
-            {/* Quick Action CTAs */}
-            <div className="space-y-3 pt-2">
+            <div className="space-y-2 text-xs text-slate-300">
+              <p className="flex items-start gap-2 font-semibold">
+                <FaMapMarkerAlt className="text-emerald-400 text-base mt-0.5 flex-shrink-0" />
+                <span>Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, Puebla</span>
+              </p>
+              <p className="flex items-center gap-2 font-semibold">
+                <FaPhoneAlt className="text-emerald-400 text-sm flex-shrink-0" />
+                <span>Urgencias: <strong className="text-white">{doctor.phone}</strong></span>
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-col gap-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:brightness-110 transition shadow-xl"
+                className="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg"
               >
-                <FaWhatsapp size={18} /> Confirmar Cita por WhatsApp: {doctor.whatsapp}
+                <FaWhatsapp size={16} /> Agendar Cita por WhatsApp
               </a>
               <a
-                href={`tel:${doctor.phone}`}
-                className="w-full py-3.5 rounded-xl bg-[#0B1B17] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-emerald-950 transition border border-[#1F3D36]"
+                href={doctor.googleMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition border border-white/20"
               >
-                <FaPhoneAlt size={14} className="text-emerald-400" /> Telefonía Directa: {doctor.phone}
+                <FaDirections size={14} className="text-emerald-400" /> Abrir en Google Maps / Waze
               </a>
             </div>
-
           </div>
+        </div>
 
-          {/* RIGHT PANEL: HD EMBEDDED GOOGLE MAPS PIN (EXACT MATCH FOR BOTÓN LINK) (7 cols) */}
-          <div className="lg:col-span-7 bg-[#112420] rounded-[2.5rem] p-8 border border-[#1F3D36] shadow-2xl flex flex-col justify-between space-y-6">
-            
-            <div>
-              <div className="flex items-center justify-between border-b border-[#1F3D36] pb-4 mb-6">
-                <div>
-                  <span className="text-xs font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/30">
-                    Ficha del Consultorio en Mapa
-                  </span>
-                  <h3 className="text-2xl font-black text-white mt-2">
-                    {doctor.title} {doctor.name}
-                  </h3>
-                </div>
-                <FaMapMarkerAlt className="text-emerald-400 text-3xl" />
-              </div>
-
-              {/* ALWAYS VISIBLE LIVE EMBEDDED GOOGLE MAP MATCHING THE PIN OF THE BUTTON */}
-              <div className="w-full h-[440px] rounded-2xl overflow-hidden border-2 border-emerald-500/40 shadow-2xl relative">
-                <iframe
-                  title="Ubicación Exacta Consultorio Dr. Edgar Grageda Flores"
-                  src={exactPlaceMapEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, filter: "contrast(1.05) saturate(1.1)" }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+        {/* ─── 3. THREE HORIZONTAL COLUMNS BELOW THE MAP (RADICALLY DIFFERENT ARCHITECTURE) ─── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+          
+          {/* Card 1: Dirección y Referencias de Llegada */}
+          <div className="bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 shadow-xl space-y-4 hover:border-emerald-500 transition-all duration-300">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl font-black">
+              <FaMapMarkerAlt />
             </div>
-
-            {/* GPS Direct Route Button */}
+            <h2 className="text-xl font-black text-[#0F172A]">Dirección del Consultorio</h2>
+            <div className="text-xs text-slate-600 space-y-2 leading-relaxed font-medium">
+              <p className="font-bold text-[#0F172A]">{doctor.address}</p>
+              <p className="text-emerald-800 font-bold">• Torres Médicas Ramblas, Piso 6, Consultorio 631</p>
+              <p className="text-slate-500">• Entre Vía Atlixcáyotl y Calle María Morelos y Pavón</p>
+            </div>
             <a
               href={doctor.googleMapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:brightness-110 transition shadow-xl"
+              className="inline-flex items-center gap-2 text-xs font-black text-emerald-700 uppercase tracking-wider hover:underline pt-2"
             >
-              <FaDirections size={18} /> Abrir Ruta GPS en Google Maps App / Waze
+              Ver Ruta GPS en Mapa &rarr;
             </a>
+          </div>
 
+          {/* Card 2: Horarios y Citas de Atención */}
+          <div className="bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 shadow-xl space-y-4 hover:border-emerald-500 transition-all duration-300">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl font-black">
+              <FaClock />
+            </div>
+            <h2 className="text-xl font-black text-[#0F172A]">Horarios de Atención</h2>
+            <div className="text-xs text-slate-600 space-y-2 leading-relaxed font-medium">
+              <p className="font-extrabold text-[#0F172A]">Lunes a Viernes:</p>
+              <p className="text-slate-700">09:00 a 19:00 hrs</p>
+              <p className="font-extrabold text-[#0F172A] pt-1">Sábados:</p>
+              <p className="text-slate-700">09:00 a 12:00 hrs</p>
+              <p className="text-emerald-800 font-bold pt-1">• Urgencias Quirúrgicas Disponibles 24/7</p>
+            </div>
+          </div>
+
+          {/* Card 3: Formas de Pago y Cédulas Oficiales */}
+          <div className="bg-white p-8 rounded-[2.5rem] border-2 border-slate-200 shadow-xl space-y-4 hover:border-emerald-500 transition-all duration-300">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl font-black">
+              <FaCreditCard />
+            </div>
+            <h2 className="text-xl font-black text-[#0F172A]">Pagos & Seguros</h2>
+            <div className="text-xs text-slate-600 space-y-2 leading-relaxed font-medium">
+              <p className="font-bold text-[#0F172A]">Efectivo, Tarjetas de Débito/Crédito y Transferencia</p>
+              <p className="text-emerald-800 font-bold">• 12 Meses Sin Intereses con Tarjetas Participantes</p>
+              <p className="text-slate-700">• Cobertura por Reembolso con Seguros de Gastos Médicos Mayores</p>
+            </div>
+            <div className="pt-2 text-[11px] font-bold text-slate-400 border-t border-slate-200">
+              Céd. Prof. {doctor.cedula} | Céd. Esp. {doctor.cedulaEspecialidad} (BUAP)
+            </div>
           </div>
 
         </div>
