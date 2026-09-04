@@ -25,13 +25,13 @@ export const services: MedicalService[] = [
       "Curación diaria de heridas pequeñas y retiro de puntos en 7 a 10 días",
       "Evitar levantar objetos pesados mayores a 5 kg durante 3 semanas"
     ],
-    priceRange: "Sujeto a valoración / Cobertura con Seguros Médicos por Reembolso",
+    priceRange: "Sujeto a valoración / Cobertura con Seguros Médicos (Pago Directo o Reembolso)",
     technicalSpecs: {
       "Técnica Utilizada": "Laparoscopía de 4 puertos (10mm umbilical + 3 de 5mm)",
       "Instrumental": "Cámara HD 30°, grapas de titanio o hem-o-lok para cístico y arteria",
       "Anestesia": "Anestesia General con intubación endotraqueal"
     },
-    image: "/images/services/colecistectomia.webp",
+    image: "/servicios/colecistectomia.jpg",
     seo: {
       title: "Colecistectomía Laparoscópica en Puebla | Dr. Edgar Grageda",
       description: "Cirugía laparoscópica de vesícula en Puebla. Retiro seguro de piedras en la vesícula con cirujano especialista en mínima invasión.",
@@ -66,7 +66,7 @@ export const services: MedicalService[] = [
       "Abordaje": "Laparoscópico Transabdominal Preperitoneal (TAPP) o Total Extraperitoneal (TEP)",
       "Malla Utilizada": "Malla de Polipropileno macroporoso tridimensional autofijable / fijación sintética"
     },
-    image: "/images/services/plastia-inguinal.webp",
+    image: "/servicios/plastia-inguinal.jpg",
     seo: {
       title: "Cirugía Laparoscópica de Hernia Inguinal en Puebla | Dr. Edgar Grageda",
       description: "Reparación de hernia inguinal por laparoscopía con malla en Puebla. Cirugía mínimamente invasiva TAPP con cirujano certificado.",
@@ -101,7 +101,7 @@ export const services: MedicalService[] = [
       "Técnica": "Apendicectomía laparoscópica de 3 puertos (10mm umbilical, 5mm suprapúbico e ilíaco)",
       "Ligadura": "Endoloop / Clips de polímero Hem-o-lok en la base apendicular"
     },
-    image: "/images/services/apendicectomia.webp",
+    image: "/servicios/apendisectomia.jpg",
     seo: {
       title: "Apendicectomía Laparoscópica de Urgencia en Puebla | Dr. Edgar Grageda",
       description: "Cirugía de apendicitis aguda de urgencia en Puebla. Atención rápida 24/7 y apendicectomía laparoscópica por especialista.",
@@ -135,7 +135,7 @@ export const services: MedicalService[] = [
       "Malla": "Malla bicapa intraperitoneal de polipropileno con barrera antiadherente de colágeno/PTFE",
       "Fijación": "Tackers absorbibles o puntos transfictivos de monofilamento"
     },
-    image: "/images/services/plastia-umbilical.webp",
+    image: "/servicios/plastia-umbilical.jpg",
     seo: {
       title: "Cirugía de Hernia Umbilical en Puebla | Dr. Edgar Grageda",
       description: "Plastía umbilical con malla en Puebla. Reparación de hernia en ombligo por laparoscopía con cirujano certificado.",
@@ -169,7 +169,7 @@ export const services: MedicalService[] = [
       "Técnica": "Laparoscopía IPOM (Intraperitoneal Onlay Mesh) o Abordaje Rives-Stoppa / TAR",
       "Material": "Malla compuesta antiadherente de gran superficie"
     },
-    image: "/images/services/hernia-incisional-cirugia.webp",
+    image: "/servicios/reconstruccion-ernia.jpg",
     seo: {
       title: "Reconstrucción de Hernia Incisional en Puebla | Dr. Edgar Grageda",
       description: "Cirugía de hernia sobre cicatriz previa en Puebla. Reparación laparoscópica de eventración con malla por especialista.",
@@ -203,7 +203,7 @@ export const services: MedicalService[] = [
       "Anestesia": "Infiltración local con Lidocaína al 2% con/sin epinefrina",
       "Sutura": "Sutura subscuticular monofilamento absorbible o nylon cosmético 4-0/5-0"
     },
-    image: "/images/services/extirpacion-lipomas.webp",
+    image: "/servicios/extirpacion-ambulatoria.jpg",
     seo: {
       title: "Quitar Lipomas y Quistes en Puebla | Dr. Edgar Grageda",
       description: "Extirpación ambulatoria de lipomas y quistes sebáceos en Puebla. Procedimiento con anestesia local en consultorio por cirujano.",
@@ -237,7 +237,7 @@ export const services: MedicalService[] = [
       "Abordaje": "Laparoscópico 5 puertos",
       "Confección": "Hiatoplastía con puntos en X de poliéster + Funduplicatura Nissen 360° floja o Toupet 270°"
     },
-    image: "/images/services/funduplicatura.webp",
+    image: "/servicios/funduplicatura-laparoscopica.jpg",
     seo: {
       title: "Cirugía de Reflujo y Hernia Hiatal en Puebla | Dr. Edgar Grageda",
       description: "Funduplicatura laparoscópica para reflujo gástrico y hernia hiatal en Puebla. Cura definitiva por cirujano especialista en laparoscopía.",
@@ -266,12 +266,12 @@ export const services: MedicalService[] = [
       "Seguimiento de resultados de histopatología si se tomaron biopsias",
       "Revisión en consultorio en 7 días"
     ],
-    priceRange: "Acepta Seguros Médicos por Reembolso",
+    priceRange: "Acepta Seguros Médicos (Pago Directo y Reembolso)",
     technicalSpecs: {
       "Óptica": "Toracoscopio/Laparoscopio HD de 5mm 30°",
       "Neumoperitoneo": "Insuflación controlada de CO2 a 12 mmHg"
     },
-    image: "/images/services/laparoscopia-diagnostica.webp",
+    image: "/servicios/laparoscipia-diagnostica.jpg",
     seo: {
       title: "Laparoscopía Diagnóstica en Puebla | Dr. Edgar Grageda",
       description: "Exploración laparoscópica de cavidad abdominal en Puebla. Diagnóstico certero para dolor abdominal oscuro por cirujano especialista.",

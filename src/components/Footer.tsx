@@ -10,18 +10,18 @@ export default function Footer() {
   const whatsappUrl = `https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`;
 
   return (
-    <footer className="bg-[#0F172A] text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <footer className="bg-[#202C32] text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* PROMINENT CENTERED WHITE LOGO ON DARK NAVY BACKGROUND (RULE 5) */}
         <div className="flex flex-col items-center justify-center mb-12 border-b border-slate-800 pb-10">
-          <div className="w-full max-w-[550px] h-32 sm:h-40 relative flex items-center justify-center mb-4">
+          <div className="w-full max-w-[750px] relative flex items-center justify-center mb-6 px-4">
             <Image
               src="/images/logo/LOGO-02.png"
               alt={`Logo Oficial ${doctor.title} ${doctor.name}`}
-              width={550}
-              height={160}
-              className="h-32 sm:h-40 w-auto object-contain"
+              width={750}
+              height={151}
+              className="h-28 sm:h-36 md:h-44 w-auto object-contain"
               priority
             />
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-emerald-400 text-base mt-0.5 flex-shrink-0" />
-                <span>Torres Médicas Ramblas, Consultorio 631, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Pue.</span>
+                <span>Hospital Puebla, Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Pue.</span>
               </div>
               <a href="https://www.facebook.com/dredgargrageda/?locale=es_LA" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-emerald-300 hover:text-white transition pt-1">
                 <FaFacebook className="text-lg" /> Síguenos en Facebook

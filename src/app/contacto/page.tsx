@@ -18,7 +18,7 @@ import {
 
 export const metadata = {
   title: `Ubicación del Consultorio y Citas | ${doctor.title} ${doctor.name}`,
-  description: `Dirección del consultorio, mapa en vivo de Google Maps, teléfono de atención y WhatsApp del ${doctor.title} ${doctor.name} en Puebla (Torres Médicas Ramblas, Atlixcáyotl).`,
+  description: `Dirección del consultorio, mapa en vivo de Google Maps, teléfono de atención y WhatsApp del ${doctor.title} ${doctor.name} en Puebla (Hospital Puebla, Privada de las Ramblas #4, Consultorio 631).`,
 };
 
 export default function ContactPage() {
@@ -40,7 +40,7 @@ export default function ContactPage() {
     priceRange: `$${doctor.consultationPrice} MXN`,
   };
 
-  const exactPlaceMapEmbedUrl = "https://maps.google.com/maps?q=Privada+de+las+Ramblas+4,+Desarrollo+Atlixcayotl,+72197+Puebla,+Pue.&t=&z=16&ie=UTF8&iwloc=B&output=embed";
+  const exactPlaceMapEmbedUrl = "https://maps.google.com/maps?q=Hospital+Puebla,+Privada+de+las+Ramblas+4,+Desarrollo+Atlixcayotl,+72197+Puebla,+Pue.&t=&z=16&ie=UTF8&iwloc=B&output=embed";
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-slate-900 py-10 px-6 relative overflow-hidden">
@@ -54,7 +54,7 @@ export default function ContactPage() {
         {/* ─── 1. TOP HEADER TITLE (MINIMALIST & CLEAN, NO HORIZONTAL BANNER!) ─── */}
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-900 font-extrabold text-xs uppercase tracking-widest border border-emerald-300">
-            <FaHospital className="text-emerald-700" /> Torres Médicas Ramblas • Puebla
+            <FaHospital className="text-emerald-700" /> Hospital Puebla • Consultorio 631 • Puebla
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight">
             Ubicación del Consultorio y Agendamiento
@@ -97,7 +97,7 @@ export default function ContactPage() {
             <div className="space-y-2 text-xs text-slate-300">
               <p className="flex items-start gap-2 font-semibold">
                 <FaMapMarkerAlt className="text-emerald-400 text-base mt-0.5 flex-shrink-0" />
-                <span>Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, Puebla</span>
+                <span>Hospital Puebla, Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, Puebla</span>
               </p>
               <p className="flex items-center gap-2 font-semibold">
                 <FaPhoneAlt className="text-emerald-400 text-sm flex-shrink-0" />
@@ -137,7 +137,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-black text-[#0F172A]">Dirección del Consultorio</h2>
             <div className="text-xs text-slate-600 space-y-2 leading-relaxed font-medium">
               <p className="font-bold text-[#0F172A]">{doctor.address}</p>
-              <p className="text-emerald-800 font-bold">• Torres Médicas Ramblas, Piso 6, Consultorio 631</p>
+              <p className="text-emerald-800 font-bold">• Hospital Puebla, Privada de las Ramblas #4, Consultorio 631</p>
               <p className="text-slate-500">• Entre Vía Atlixcáyotl y Calle María Morelos y Pavón</p>
             </div>
             <a
@@ -174,7 +174,7 @@ export default function ContactPage() {
             <div className="text-xs text-slate-600 space-y-2 leading-relaxed font-medium">
               <p className="font-bold text-[#0F172A]">Efectivo, Tarjetas de Débito/Crédito y Transferencia</p>
               <p className="text-emerald-800 font-bold">• 12 Meses Sin Intereses con Tarjetas Participantes</p>
-              <p className="text-slate-700">• Cobertura por Reembolso con Seguros de Gastos Médicos Mayores</p>
+              <p className="text-slate-700">• Se aceptan Seguros de Gastos Médicos Mayores (Pago Directo y Reembolso)</p>
             </div>
             <div className="pt-2 text-[11px] font-bold text-slate-400 border-t border-slate-200">
               Céd. Prof. {doctor.cedula} | Céd. Esp. {doctor.cedulaEspecialidad} (BUAP)

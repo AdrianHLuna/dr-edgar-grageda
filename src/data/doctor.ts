@@ -12,21 +12,21 @@ export const doctor: DoctorProfile = {
   phone: "2225984210",
   whatsapp: "2225984210",
   email: "contacto@dredgargrageda.com",
-  address: "Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Puebla",
+  address: "Hospital Puebla, Privada de las Ramblas #4, Consultorio 631, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Puebla",
   locations: [
     {
-      id: "consultorio-ramblas",
-      name: "Consultorio Torres Médicas Ramblas",
-      address: "Privada de las Ramblas #4, Consultorio 631, entre Vía Atlixcáyotl y Calle María Morelos y Pavón, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Puebla",
+      id: "consultorio-hospital-puebla",
+      name: "Consultorio Hospital Puebla",
+      address: "Hospital Puebla, Privada de las Ramblas #4, Consultorio 631, entre Vía Atlixcáyotl y Calle María Morelos y Pavón, Col. Desarrollo Atlixcáyotl, C.P. 72197, Puebla, Puebla",
       city: "Puebla, Puebla",
-      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Privada+de+las+Ramblas+4+Consultorio+631+Desarrollo+Atlixcayotl+Puebla",
-      mapEmbedUrl: "https://maps.google.com/maps?q=Privada+de+las+Ramblas+4,+Desarrollo+Atlixcayotl,+72197+Puebla,+Pue.&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+Puebla+Privada+de+las+Ramblas+4+Consultorio+631+Desarrollo+Atlixcayotl+Puebla",
+      mapEmbedUrl: "https://maps.google.com/maps?q=Hospital+Puebla,+Privada+de+las+Ramblas+4,+Desarrollo+Atlixcayotl,+72197+Puebla,+Pue.&t=&z=16&ie=UTF8&iwloc=&output=embed"
     }
   ],
   city: "Puebla",
   state: "Puebla",
   country: "México",
-  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Privada+de+las+Ramblas+4+Consultorio+631+Desarrollo+Atlixcayotl+Puebla",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+Puebla+Privada+de+las+Ramblas+4+Consultorio+631+Desarrollo+Atlixcayotl+Puebla",
   consultationPrice: 900,
   paymentMethods: ["Efectivo", "Transferencia", "Tarjeta de Débito", "Tarjeta de Crédito", "12 Meses Sin Intereses (MSI)"],
   insurances: ["AXA Seguros", "GNP Seguros", "MetLife", "Monterrey New York Life", "Mapfre", "Seguros Banorte", "Inbursa", "Allianz"],

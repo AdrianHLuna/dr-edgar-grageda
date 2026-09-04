@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { symptoms } from "@/data/symptoms";
 import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
@@ -49,10 +50,15 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl lg:text-5xl font-black mb-6 relative z-10">{symptom.name}</h1>
             <p className="text-lg text-slate-300 relative z-10 leading-relaxed">{symptom.description}</p>
           </div>
-          <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] flex items-center justify-center border-4 border-white shadow-xl relative overflow-hidden group">
-             <div className="absolute inset-0 bg-slate-200 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-               <span className="text-slate-400 font-bold uppercase tracking-widest group-hover:text-rose-400 transition-colors">Espacio Imagen Principal</span>
-             </div>
+          <div className="lg:w-1/2 min-h-[350px] relative rounded-[3rem] overflow-hidden border-4 border-white shadow-xl bg-slate-900 group">
+            <Image
+              src={symptom.image}
+              alt={symptom.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent pointer-events-none" />
           </div>
         </FadeUp>
 
@@ -80,15 +86,15 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
                   </li>
                 ))}
               </ul>
-              <p className="text-sm text-slate-500 mt-4 italic">* Estas son solo posibles causas. El diagnóstico definitivo debe realizarlo la especialista tras una valoración.</p>
+              <p className="text-sm text-slate-500 mt-4 italic">* Estas son solo posibles causas. El diagnóstico definitivo debe realizarlo el especialista tras una valoración.</p>
             </StaggerItem>
           </StaggerContainer>
 
           {/* Sidebar CTA */}
           <FadeUp delay={0.2} className="lg:col-span-1">
             <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
-              <h3 className="text-2xl font-black mb-4">La Dra. {doctor.name} atiende este síntoma</h3>
-              <p className="text-white/80 mb-8">No esperes más. Agendar una valoración oportuna es el primer paso para la tranquilidad tuya y de tu hijo.</p>
+              <h3 className="text-2xl font-black mb-4">El {doctor.title} {doctor.name} atiende este síntoma</h3>
+              <p className="text-white/80 mb-8">No esperes más. Agendar una valoración oportuna es el primer paso para tu salud y tranquilidad.</p>
               <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-white text-primary font-black py-4 rounded-xl hover:scale-105 hover:bg-slate-50 transition-all shadow-lg">
                 <FaCalendarCheck className="group-hover:rotate-12 transition-transform" /> Agendar Valoración
               </a>
@@ -99,3 +105,4 @@ export default async function SymptomPage({ params }: { params: Promise<{ slug: 
     </div>
   );
 }
+

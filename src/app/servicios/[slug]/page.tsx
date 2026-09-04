@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { services } from "@/data/services";
 import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
@@ -60,10 +61,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl lg:text-5xl font-black mb-6 relative z-10">{service.name}</h1>
             <p className="text-lg text-white/90 relative z-10 leading-relaxed">{service.longDescription}</p>
           </div>
-          <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] flex items-center justify-center border-4 border-white shadow-xl relative overflow-hidden group">
-             <div className="absolute inset-0 bg-slate-200 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-               <span className="text-slate-400 font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Espacio Imagen Principal</span>
-             </div>
+          <div className="lg:w-1/2 min-h-[350px] relative rounded-[3rem] overflow-hidden border-4 border-white shadow-xl bg-slate-900 group">
+            <Image
+              src={service.image}
+              alt={service.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent pointer-events-none" />
           </div>
         </FadeUp>
 
@@ -129,7 +135,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <FadeUp delay={0.2} className="lg:col-span-1">
             <div className="sticky top-32 bg-slate-900 rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
               <h3 className="text-2xl font-black mb-4">¿Requiere este servicio?</h3>
-              <p className="text-slate-300 mb-8">Antes de cualquier procedimiento, la doctora realizará una valoración integral para asegurar que es la mejor opción para tu hijo.</p>
+              <p className="text-slate-300 mb-8">Antes de cualquier procedimiento, el {doctor.title} {doctor.name} realizará una valoración integral para asegurar que es la mejor opción para tu salud.</p>
               <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full flex items-center justify-center gap-3 bg-primary text-white font-black py-4 rounded-xl hover:scale-105 hover:bg-primary/90 transition-all shadow-lg">
                 <FaCalendarCheck className="group-hover:rotate-12 transition-transform" /> Agendar Valoración
               </a>
@@ -140,3 +146,4 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     </div>
   );
 }
+

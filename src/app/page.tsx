@@ -92,7 +92,7 @@ export default function Home() {
             </h1>
 
             <p className="text-slate-600 text-base sm:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
-              Especialista certificado en resolución de hernias abdominales, enfermedades de la vesícula biliar y atención quirúrgica de urgencia en Puebla (Torres Médicas Ramblas).
+              Especialista certificado en resolución de hernias abdominales, enfermedades de la vesícula biliar y atención quirúrgica de urgencia en Puebla (Hospital Puebla, Privada de las Ramblas #4).
             </p>
 
             {/* Main Action Bar */}
@@ -530,7 +530,7 @@ export default function Home() {
                   Ubicación & Citas Directas
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-black text-white">
-                  Consultorio en Torres Médicas Ramblas, Puebla
+                  Consultorio en Hospital Puebla, Privada de las Ramblas #4
                 </h2>
                 <p className="text-slate-300 text-sm">
                   {doctor.address} (Zona Desarrollo Atlixcáyotl).
@@ -571,7 +571,7 @@ export default function Home() {
 
               <div className="bg-white/5 p-6 rounded-2xl border border-white/10 text-center space-y-2">
                 <span className="text-xs font-bold text-slate-400">Seguros Médicos</span>
-                <p className="text-lg font-bold text-white">Reembolso Gastos Mayores</p>
+                <p className="text-lg font-bold text-white">Pago Directo y Convenio (Sin Reembolso Obli.)</p>
               </div>
             </div>
 

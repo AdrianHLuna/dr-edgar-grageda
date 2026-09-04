@@ -30,24 +30,16 @@ export default function Header() {
       
       {/* Main Nav Bar */}
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-auto aspect-square flex-shrink-0">
+        <Link href="/" className="flex items-center group py-1">
+          <div className="relative h-14 sm:h-16 w-auto flex items-center">
             <Image
               src="/images/logo/LOGO-01.png"
               alt={`Logo ${doctor.title} ${doctor.name}`}
-              width={180}
-              height={60}
-              className="h-12 w-auto object-contain"
+              width={400}
+              height={81}
+              className="h-12 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               priority
             />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg sm:text-xl font-black text-slate-900 leading-tight tracking-tight group-hover:text-emerald-600 transition">
-              {doctor.title} {doctor.name}
-            </span>
-            <span className="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">
-              {doctor.specialty} • Laparoscopía
-            </span>
           </div>
         </Link>
 

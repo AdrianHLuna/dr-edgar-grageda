@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { diseases } from "@/data/diseases";
 import { doctor } from "@/data/doctor";
 import { notFound } from "next/navigation";
@@ -63,10 +64,15 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
             <h1 className="text-4xl lg:text-5xl font-black mb-6 relative z-10">{disease.name}</h1>
             <p className="text-lg text-slate-300 relative z-10 leading-relaxed">{disease.description}</p>
           </div>
-          <div className="lg:w-1/2 min-h-[300px] bg-slate-200 rounded-[3rem] flex items-center justify-center border-4 border-white shadow-xl relative overflow-hidden group">
-             <div className="absolute inset-0 bg-slate-200 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center">
-               <span className="text-slate-400 font-bold uppercase tracking-widest group-hover:text-primary transition-colors">Espacio Imagen Principal</span>
-             </div>
+          <div className="lg:w-1/2 min-h-[350px] relative rounded-[3rem] overflow-hidden border-4 border-white shadow-xl bg-slate-900 group">
+            <Image
+              src={disease.image}
+              alt={disease.name}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent pointer-events-none" />
           </div>
         </FadeUp>
 
@@ -132,10 +138,10 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
           {/* Sidebar CTA */}
           <FadeUp delay={0.2} className="lg:col-span-1">
             <div className="sticky top-32 bg-primary rounded-3xl p-8 text-white shadow-xl hover:shadow-2xl transition-shadow group">
-              <h3 className="text-2xl font-black mb-4">¿Tu hijo presenta síntomas de {disease.name}?</h3>
-              <p className="text-white/80 mb-8">El diagnóstico temprano cambia el pronóstico. La {doctor.title} {doctor.name} es especialista certificada en este padecimiento.</p>
+              <h3 className="text-2xl font-black mb-4">¿Presentas síntomas de {disease.name}?</h3>
+              <p className="text-white/80 mb-8">El diagnóstico temprano cambia el pronóstico. El {doctor.title} {doctor.name} es especialista certificado en la evaluación y tratamiento de esta afección en Puebla.</p>
               <a href={`https://wa.me/${doctor.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noreferrer" className="block w-full text-center bg-white text-primary font-black py-4 rounded-xl hover:scale-105 hover:bg-slate-50 transition-all shadow-lg">
-                Agendar Consulta
+                Agendar Consulta ($900 MXN)
               </a>
             </div>
           </FadeUp>
@@ -144,3 +150,4 @@ export default async function DiseasePage({ params }: { params: Promise<{ slug: 
     </div>
   );
 }
+
