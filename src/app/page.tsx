@@ -8,6 +8,7 @@ import { services } from "@/data/services";
 import { symptoms } from "@/data/symptoms";
 import StructuredData from "@/components/StructuredData";
 import CardImageHeader from "@/components/CardImageHeader";
+import GallerySection from "@/components/GallerySection";
 import { motion } from "framer-motion";
 import { 
   FaUserMd, 
@@ -188,94 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SECCIÓN 1: CIRUGÍAS Y SERVICIOS LAPAROSCÓPICOS (PRIMERA SECCIÓN) ──── */}
-      <section className="py-24 px-6 bg-[#0F172A] text-white border-b border-slate-800">
-        <div className="max-w-7xl mx-auto space-y-12">
-          
-          <motion.div 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true }} 
-            variants={fadeUp}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-6"
-          >
-            <div>
-              <span className="text-xs font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/30">
-                Especialidades de Quirófano
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-black text-white mt-3">
-                Cirugías y Procedimientos Laparoscópicos
-              </h2>
-            </div>
-            <Link
-              href="/servicios"
-              className="px-6 py-3 rounded-2xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-500 transition w-fit"
-            >
-              Ver Todas las Cirugías &rarr;
-            </Link>
-          </motion.div>
-
-          {/* Bento Grid with Mandatory Image Space for Every Single Service Card */}
-          <motion.div 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true }} 
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {services.map((service) => (
-              <motion.div
-                key={service.id}
-                variants={fadeUp}
-                className="group bg-white/5 rounded-tr-[3.5rem] rounded-bl-[3.5rem] rounded-tl-2xl rounded-br-2xl border-2 border-white/10 overflow-hidden flex flex-col justify-between hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-500 shadow-xl"
-              >
-                <div>
-                  {/* MANDATORY DEDICATED IMAGE CONTAINER FOR EVERY SERVICE CARD */}
-                  <CardImageHeader
-                    src={service.image}
-                    alt={service.name}
-                    aspectRatio="aspect-video"
-                    category="service"
-                  />
-
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full">
-                        {service.type === "hospitalario" ? "Hospitalario" : "Ambulatorio"}
-                      </span>
-                      <span className="text-xs font-bold text-slate-400">
-                        {service.duration}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-black text-white leading-snug group-hover:text-emerald-400 transition-colors">
-                      {service.name}
-                    </h3>
-
-                    <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* INSTITUTIONAL CONCISE BUTTON (RULE 5) */}
-                <div className="p-6 pt-0">
-                  <Link
-                    href={`/servicios/${service.slug}`}
-                    className="w-full py-4 px-6 rounded-2xl bg-emerald-600 text-white font-black text-xs uppercase tracking-wider hover:bg-emerald-500 transition flex items-center justify-between leading-snug"
-                  >
-                    <span>Ver Ficha del Procedimiento</span>
-                    <FaArrowRight size={14} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* ─── SECCIÓN 2: SEMBLANZA Y TRAYECTORIA DEL DOCTOR ("ABOUT ME") ─────────── */}
+      {/* ─── SECCIÓN 1: SEMBLANZA Y TRAYECTORIA DEL DOCTOR ("ABOUT ME") ─────────── */}
       <section className="py-24 px-6 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto space-y-12">
           
@@ -362,6 +276,96 @@ export default function Home() {
 
         </div>
       </section>
+
+      {/* ─── SECCIÓN 2: CIRUGÍAS Y SERVICIOS LAPAROSCÓPICOS ──── */}
+      <section className="py-24 px-6 bg-[#0F172A] text-white border-b border-slate-800">
+        <div className="max-w-7xl mx-auto space-y-12">
+          
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }} 
+            variants={fadeUp}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-6"
+          >
+            <div>
+              <span className="text-xs font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full border border-emerald-500/30">
+                Especialidades de Quirófano
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-white mt-3">
+                Cirugías y Procedimientos Laparoscópicos
+              </h2>
+            </div>
+            <Link
+              href="/servicios"
+              className="px-6 py-3 rounded-2xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-500 transition w-fit"
+            >
+              Ver Todas las Cirugías &rarr;
+            </Link>
+          </motion.div>
+
+          {/* Bento Grid with Mandatory Image Space for Every Single Service Card */}
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible" 
+            viewport={{ once: true }} 
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {services.map((service) => (
+              <motion.div
+                key={service.id}
+                variants={fadeUp}
+                className="group bg-white/5 rounded-tr-[3.5rem] rounded-bl-[3.5rem] rounded-tl-2xl rounded-br-2xl border-2 border-white/10 overflow-hidden flex flex-col justify-between hover:bg-white/10 hover:border-emerald-500/50 transition-all duration-500 shadow-xl"
+              >
+                <div>
+                  {/* MANDATORY DEDICATED IMAGE CONTAINER FOR EVERY SERVICE CARD */}
+                  <CardImageHeader
+                    src={service.image}
+                    alt={service.name}
+                    aspectRatio="aspect-video"
+                    category="service"
+                  />
+
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full">
+                        {service.type === "hospitalario" ? "Hospitalario" : "Ambulatorio"}
+                      </span>
+                      <span className="text-xs font-bold text-slate-400">
+                        {service.duration}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-black text-white leading-snug group-hover:text-emerald-400 transition-colors">
+                      {service.name}
+                    </h3>
+
+                    <p className="text-xs text-slate-300 line-clamp-3 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* INSTITUTIONAL CONCISE BUTTON (RULE 5) */}
+                <div className="p-6 pt-0">
+                  <Link
+                    href={`/servicios/${service.slug}`}
+                    className="w-full py-4 px-6 rounded-2xl bg-emerald-600 text-white font-black text-xs uppercase tracking-wider hover:bg-emerald-500 transition flex items-center justify-between leading-snug"
+                  >
+                    <span>Ver Ficha del Procedimiento</span>
+                    <FaArrowRight size={14} />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* ─── SECCIÓN 3: GALERÍA FOTOGRÁFICA INTERACTIVA DE PRÁCTICA CLÍNICA ───── */}
+      <GallerySection />
 
       {/* ─── SECCIÓN 3: PADECIMIENTOS Y ENFERMEDADES ATENDIDAS ─────────────────── */}
       <section className="py-24 px-6 bg-white border-b border-slate-200">
