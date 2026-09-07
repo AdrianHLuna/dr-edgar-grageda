@@ -32,6 +32,7 @@ export const doctor: DoctorProfile = {
   insurances: ["AXA Seguros", "GNP Seguros", "MetLife", "Monterrey New York Life", "Mapfre", "Seguros Banorte", "Inbursa", "Allianz"],
   schedule: "Lunes a Viernes de 09:00 a 19:00 hrs. Sábados de 09:00 a 12:00 hrs.",
   photo: "/images/doctor/dr-edgar-grageda.jpeg",
+  aboutPhoto: "/images/doctor/doctor-aboutme.jpeg",
   logo: "/images/logo/LOGO-02.png",
   bio: "Soy el Dr. Edgar Grageda Flores, especialista en Cirugía General egresado de la Benemérita Universidad Autónoma de Puebla. Con más de 10 años de experiencia, +5,500 pacientes atendidos y más de 1,000 cirugías realizadas, estoy dedicado a la atención integral de patologías digestivas, hernias de pared abdominal y urgencias quirúrgicas mediante cirugía laparoscópica mínimamente invasiva.",
   philosophy: "Ofrecer atención quirúrgica de alta calidad y precisión clínica en Puebla, priorizando técnicas laparoscópicas mínimamente invasivas para garantizar un dolor postoperatorio mínimo y una rápida recuperación.",

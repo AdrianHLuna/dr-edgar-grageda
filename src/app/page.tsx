@@ -206,7 +206,7 @@ export default function Home() {
               <div className="relative w-full max-w-md aspect-[3/4] rounded-tr-[3.5rem] rounded-bl-[3.5rem] rounded-tl-2xl rounded-br-2xl overflow-hidden border-4 border-white shadow-2xl bg-slate-800 p-2">
                 <div className="w-full h-full rounded-tr-[3rem] rounded-bl-[3rem] rounded-tl-xl rounded-br-xl overflow-hidden relative">
                   <Image
-                    src={doctor.photo}
+                    src={doctor.aboutPhoto || doctor.photo}
                     alt={`Semblanza del ${doctor.title} ${doctor.name}`}
                     fill
                     className="object-cover object-top"
