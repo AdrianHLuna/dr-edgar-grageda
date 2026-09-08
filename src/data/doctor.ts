@@ -87,5 +87,8 @@ export const doctor: DoctorProfile = {
       date: "Hace 1 mes",
       sourceUrl: "https://www.facebook.com/dredgargrageda/?locale=es_LA"
     }
-  ]
+  ],
+  ga4Id: "G-KYL44SW6R7",
+  gadsId: "AW-16510998828",
+  gtmId: "GTM-5VLKT6Q9",
 };

@@ -95,6 +95,8 @@ export const DoctorProfileSchema = z.object({
   videos: z.array(VideoSchema).optional(),
   sameAs: z.array(z.string().url()).optional(),
   ga4Id: z.string().optional(),
+  gadsId: z.string().optional(),
+  gtmId: z.string().optional(),
 });
 
 // ─── Medical Condition (Enfermedad) ───────────────────────────
