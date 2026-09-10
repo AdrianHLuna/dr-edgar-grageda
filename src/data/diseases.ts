@@ -44,7 +44,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Permite reparar el defecto desde el interior mediante incisiones milimétricas, reduciendo sustancialmente el dolor postoperatorio, acortando la recuperación a pocos días y minimizando el riesgo de recaída."
       }
     ],
-    image: "/enfermedades/hernia-inguinal.jpg",
+    image: "/images/enfermedades/hernia-inguinal.jpg",
     seo: {
       title: "Cirugía de Hernia Inguinal en Puebla | Dr. Edgar Grageda",
       description: "Especialista en reparación de hernia inguinal por laparoscopía con malla en Puebla. Cirugía de mínima invasión y rápida recuperación.",
@@ -94,7 +94,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Con la técnica de mínima invasión, la mayoría de los pacientes regresan a sus actividades sedentarias o de oficina en 3 a 5 días, restringiendo cargas pesadas por 3 a 4 semanas."
       }
     ],
-    image: "/enfermedades/hernia-umbilical.jpg",
+    image: "/images/enfermedades/hernia-umbilical.jpg",
     seo: {
       title: "Cirugía de Hernia Umbilical en Puebla | Dr. Edgar Grageda",
       description: "Tratamiento y reparación de hernia umbilical en Puebla. Cirugía laparoscópica con malla, atención experta en Angelópolis.",
@@ -138,7 +138,7 @@ export const diseases: MedicalCondition[] = [
         answer: "El dolor suele ser intenso porque la grasa atrapada en el pequeño orificio aponeurótico sufre isquemia o pellizcamiento por la contracción muscular de los abdominales."
       }
     ],
-    image: "/enfermedades/hernia-epigastrica.jpg",
+    image: "/images/enfermedades/hernia-epigastrica.jpg",
     seo: {
       title: "Cirugía de Hernia Epigástrica en Puebla | Dr. Edgar Grageda",
       description: "Diagnóstico y cirugía laparoscópica para hernia epigástrica en Puebla. Reparación eficaz de la línea alba con cirujano especialista.",
@@ -184,7 +184,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Sí. La cirugía laparoscópica moderna permite abordar la eventración por incisiones sanas alejadas de la cicatriz previa, colocando una malla que cubre ampliamente todo el defecto."
       }
     ],
-    image: "/enfermedades/hernia-insicional.jpg",
+    image: "/images/enfermedades/hernia-insicional.jpg",
     seo: {
       title: "Hernia Incisional y Reconstrucción de Pared en Puebla | Dr. Edgar Grageda",
       description: "Tratamiento de hernia en cicatriz previa (eventración) en Puebla. Cirugía laparoscópica con malla de alta definición.",
@@ -233,7 +233,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Permite explorar toda la cavidad abdominal, causa drásticamente menos dolor, deja cicatrices de 5 milímetros y permite el alta hospitalaria en 24 horas."
       }
     ],
-    image: "/enfermedades/Apendicitis-Aguda.jpg",
+    image: "/images/enfermedades/Apendicitis-Aguda.jpg",
     seo: {
       title: "Cirugía de Urgencia por Apendicitis Aguda en Puebla | Dr. Edgar Grageda",
       description: "Apendicectomía laparoscópica de urgencia en Puebla. Atención rápida 24/7 y cirugía mínimamente invasiva por especialista.",
@@ -283,7 +283,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Excelente. El hígado sigue produciendo bilis normalmente y la envía directo al intestino. Tras un breve periodo de adaptación alimenticia de 2 a 3 semanas, la digestión se normaliza por completo."
       }
     ],
-    image: "/enfermedades/coleliatiasis.jpg",
+    image: "/images/enfermedades/coleliatiasis.jpg",
     seo: {
       title: "Cirugía de Vesícula Biliar (Colecistectomía) en Puebla | Dr. Edgar Grageda",
       description: "Cirugía laparoscópica de vesícula en Puebla. Tratamiento para piedras en vesícula y colecistitis por especialista en mínima invasión.",
@@ -329,7 +329,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Porque si los cálculos biliares permanecen en la vesícula, el riesgo de sufrir un segundo episodio de pancreatitis (frecuentemente más grave) supera el 50% en los primeros meses."
       }
     ],
-    image: "/enfermedades/pancreatitis-aguda.jpg",
+    image: "/images/enfermedades/pancreatitis-aguda.jpg",
     seo: {
       title: "Tratamiento de Pancreatitis Aguda en Puebla | Dr. Edgar Grageda",
       description: "Manejo médico y quirúrgico de pancreatitis aguda biliar en Puebla. Evaluación experta y colecistectomía por cirujano general.",
@@ -375,7 +375,7 @@ export const diseases: MedicalCondition[] = [
         answer: "El dolor de colitis suele ser difuso, cambiante de lugar y mejora tras expulsar gases o evacuar. El dolor de vesícula o apendicitis es localizado, continuo, progresivo y no se quita al ir al baño. Requiere valoración médica."
       }
     ],
-    image: "/enfermedades/sindrome-intestino-irritable.jpg",
+    image: "/images/enfermedades/sindrome-intestino-irritable.jpg",
     seo: {
       title: "Tratamiento de Colitis e Inflamación Abdominal en Puebla | Dr. Edgar Grageda",
       description: "Diagnóstico especializado para colitis y síndrome de intestino irritable en Puebla. Evaluación integral por especialista en aparato digestivo.",
@@ -421,7 +421,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Sí. Si una úlcera profunda no recibe tratamiento, puede corroer toda la pared del estómago o duodeno produciendo una perforación. Esto causa dolor súbito insoportable y requiere cirugía de urgencia."
       }
     ],
-    image: "/enfermedades/ulcera-peptica.jpg",
+    image: "/images/enfermedades/ulcera-peptica.jpg",
     seo: {
       title: "Gastritis y Úlcera Péptica en Puebla | Dr. Edgar Grageda",
       description: "Diagnóstico y tratamiento para gastritis aguda y úlceras digestivas en Puebla. Manejo médico y quirúrgico por especialista.",
@@ -466,7 +466,7 @@ export const diseases: MedicalCondition[] = [
         answer: "Sí. La mayoría de los lipomas y quistes sebáceos de tamaño pequeño a moderado se extirpan mediante un procedimiento ambulatorio sencillo bajo anestesia local en el consultorio, permitiendo regresar a casa de inmediato."
       }
     ],
-    image: "/enfermedades/lipomas.jpg",
+    image: "/images/enfermedades/lipomas.jpg",
     seo: {
       title: "Eliminación de Lipomas y Quistes en Puebla | Dr. Edgar Grageda",
       description: "Cirugía ambulatoria para extirpación de lipomas y quistes sebáceos en Puebla. Incisión estética y retiro completo con anestesia local.",

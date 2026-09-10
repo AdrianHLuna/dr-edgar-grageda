@@ -59,45 +59,24 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: 6,
-    src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.43 PM (5).jpeg",
-    title: "Urgencias Quirúrgicas 24/7",
-    category: "Atención Continua",
-    description: "Resolución oportuna para cuadros de apendicitis, colecistitis aguda y hernias encarceladas."
-  },
-  {
-    id: 7,
     src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.44 PM.jpeg",
     title: "Tecnología e Instrumental de Última Generación",
     category: "Procedimientos",
     description: "Uso de material quirúrgico estéril y mallas sintéticas biocompatibles de alta resistencia."
   },
   {
-    id: 8,
+    id: 7,
     src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.44 PM (1).jpeg",
     title: "Ambiente Clínico Seguro e Higiénico",
     category: "Instalaciones",
     description: "Instalaciones modernas que garantizan el cumplimiento de normativas de salud COFEPRIS."
   },
   {
-    id: 9,
+    id: 8,
     src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.44 PM (2).jpeg",
     title: "Compromiso y Humanismo Quirúrgico",
     category: "Valores Médicos",
     description: "Trato empático enfocado en minimizar el dolor y garantizar el confort del paciente."
-  },
-  {
-    id: 10,
-    src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.44 PM (3).jpeg",
-    title: "Trayectoria Certificada BUAP y CMCG",
-    category: "Experiencia",
-    description: "Más de 10 años de experiencia, +5,500 pacientes atendidos y +1,000 cirugías realizadas."
-  },
-  {
-    id: 11,
-    src: "/images/doctor/WhatsApp Image 2026-09-01 at 5.11.44 PM (4).jpeg",
-    title: "Seguimiento y Recuperación Posoperatoria",
-    category: "Acompañamiento",
-    description: "Monitoreo continuo tras la cirugía para asegurar un retorno seguro a las actividades diarias."
   }
 ];
 
@@ -267,7 +246,7 @@ export default function GallerySection() {
         {/* THUMBNAILS MASONRY GRID PREVIEW */}
         <div className="space-y-4 pt-4">
           <h3 className="text-xs font-black uppercase tracking-widest text-emerald-400">
-            Explora las 11 Fotógrafias Clínicas (Haz clic para ampliar)
+            Explora las {galleryItems.length} Fotografías Clínicas (Haz clic para ampliar)
           </h3>
           
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
