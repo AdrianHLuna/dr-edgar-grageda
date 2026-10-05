@@ -8,7 +8,7 @@ export const doctor: DoctorProfile = {
   subspecialty: "Cirugía Abdominal y Mínimamente Invasiva",
   cedula: "7878147",
   cedulaEspecialidad: "10649245",
-  cofepris: "En trámite",
+  cofepris: "2421062002A00438",
   phone: "2225984210",
   whatsapp: "2225984210",
   email: "contacto@dredgargrageda.com",
